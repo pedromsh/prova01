@@ -3,10 +3,10 @@ package prova01;
 public class Main {
 
 	public static void main(String[] args) {
-		Gol[][] gol = new Gol[8][16];
+		Gol[][] gol = new Gol[9][17];
 		
-		for (int i = 0; i < 8; i++) {
-			for(int j = 0; j < 16; j++) {
+		for (int i = 0; i < 9; i++) {
+			for(int j = 0; j < 17; j++) {
 				gol[i][j] = new Gol();
 				gol[i][j].setPosicaoX(i);
 				gol[i][j].setPosicaoY(j);
@@ -15,6 +15,7 @@ public class Main {
 			}
 		}
 		
+		//Instancia dos chutes
 		Chute c1 = new Chute(1, 2, 1, 4, 7);
 		Chute c2 = new Chute(2, 6, 1, 3, 6);
 		Chute c3 = new Chute(3, 9, 2, 4, 15);
@@ -46,10 +47,85 @@ public class Main {
 		Chute c29 = new Chute(29, 10, 2, 2, 13);
 		Chute c30 = new Chute(30, 7, 3, 5, 3);
 		
+		//Instancia dos goleiros
+		Goleiro g1 = new Goleiro(1, 5, 7, 8, 9, 6, 6);
+		g1.setNome("Pratik Skaggs");
 		
-
+		Goleiro g2 = new Goleiro(2, 9, 6, 8, 8, 7, 10);
+		g2.setNome("Uehudah Hack");
 		
-
+		Goleiro g3 = new Goleiro(3, 5, 8, 5, 8, 10, 7);
+		g3.setNome("Edison Drye");
+		
+		Goleiro g4 = new Goleiro(4, 6, 6, 5, 8, 7, 6);
+		g4.setNome("Ajani Harding");
+		
+		Goleiro g5 = new Goleiro(5, 5, 8, 7, 9, 9, 10);
+		g5.setNome("Orazio Hart");
+		
+		Goleiro g6 = new Goleiro(6, 9, 7, 10, 7, 7, 6);
+		g6.setNome("Tristan Karns");
+		
+		Goleiro g7 = new Goleiro(7, 10, 9, 7, 6, 5, 8);
+		g7.setNome("Niven Glaser");
+		
+		Goleiro g8 = new Goleiro(8, 10, 7, 9, 5, 9, 5);
+		g8.setNome("Derwyn Devers");
+		
+		Goleiro g9 = new Goleiro(9, 10, 7, 7, 5, 5, 6);
+		g9.setNome("Tod Phan");
+		
+		Goleiro g10 = new Goleiro(10, 7, 6, 5, 9, 7, 5);
+		g10.setNome("Eddie Hulse");
+		
+		Goleiro g11 = new Goleiro(11, 5, 8, 8, 7, 7, 8);
+		g11.setNome("Welford Yepez");
+		
+		Goleiro g12 = new Goleiro(12, 6, 5, 6, 5, 7, 6);
+		g12.setNome("Rishley Snyder");
+		
+		Goleiro g13 = new Goleiro(13, 10, 9, 8, 6, 10, 9);
+		g13.setNome("Milo Mccurdy");
+		
+		Goleiro g14 = new Goleiro(14, 8, 5, 8, 5, 10, 7);
+		g14.setNome("Carden Justus");
+		
+		Goleiro g15 = new Goleiro(15, 8, 5, 8, 8, 8, 6);
+		g15.setNome("Carlyon Gorby");
+		
+		Goleiro g16 = new Goleiro(16, 8, 10, 9, 8, 9, 5);
+		g16.setNome("Mungo Spangler");
+		
+		Goleiro g17 = new Goleiro(17, 9, 10, 7, 9, 9, 10);
+		g17.setNome("Whitmore Squires");
+		
+		Goleiro g18 = new Goleiro(18, 8, 5, 10, 5, 7, 7);
+		g18.setNome("Pedrog Mccurdy");
+		
+		Goleiro g19 = new Goleiro(19, 8, 8, 8, 9, 9, 9);
+		g19.setNome("Ridgley Leo");
+		
+		Goleiro g20 = new Goleiro(20, 9, 8, 7, 6, 9, 10);
+		g20.setNome("Bolton Tarin");
+		
+		Goleiro g21 = new Goleiro(21, 7, 7, 5, 10, 10, 7);
+		g21.setNome("Edison Loy");
+		
+		Goleiro g22 = new Goleiro(22, 7, 5, 5, 8, 9, 9);
+		g22.setNome("Delling Herndon");
+		
+		Goleiro g23 = new Goleiro(23, 7, 7, 5, 8, 10, 5);
+		g23.setNome("Senichi Iorio");
+		
+		Goleiro g24 = new Goleiro(24, 6, 7, 8, 8, 9, 9);
+		g24.setNome("Albin Kerner");
+		
+		Goleiro g25 = new Goleiro(25, 9, 10, 8, 7, 7, 5);
+		g25.setNome("Jivin Justus");
+		
+		Goleiro g26 = new Goleiro(26, 10, 9, 10, 5, 7, 8);
+		g26.setNome("Clement Fleisher");
+		
 	}
 
 }
