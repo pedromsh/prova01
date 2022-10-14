@@ -9,6 +9,9 @@ public class Selecao {
 	
 	public Selecao(Goleiro goleiro) {
 		listaGoleiro = new ArrayList<Goleiro>();
+	}
+	
+	public void addGoleiros(Goleiro goleiro) {
 		listaGoleiro.add(goleiro);
 	}
 	

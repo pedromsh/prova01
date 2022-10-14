@@ -126,6 +126,42 @@ public class Main {
 		Goleiro g26 = new Goleiro(26, 10, 9, 10, 5, 7, 8);
 		g26.setNome("Clement Fleisher");
 		
+		//Instancia das selecoes
+		Selecao selecao1 = new Selecao(g1);
+		selecao1.setNome("Brasil");
+		selecao1.addGoleiros(g2);
+		selecao1.addGoleiros(g3);
+		selecao1.addGoleiros(g4);
+		selecao1.addGoleiros(g5);
+		
+		Selecao selecao2 = new Selecao(g6);
+		selecao2.setNome("Alemanha");
+		selecao2.addGoleiros(g7);
+		selecao2.addGoleiros(g8);
+		selecao2.addGoleiros(g9);
+		selecao2.addGoleiros(g10);
+		
+		Selecao selecao3 = new Selecao(g11);
+		selecao3.setNome("Franca");
+		selecao3.addGoleiros(g12);
+		selecao3.addGoleiros(g13);
+		selecao3.addGoleiros(g14);
+		selecao3.addGoleiros(g15);
+		
+		Selecao selecao4 = new Selecao(g16);
+		selecao4.setNome("Dinamarca");
+		selecao4.addGoleiros(g17);
+		selecao4.addGoleiros(g18);
+		selecao4.addGoleiros(g19);
+		selecao4.addGoleiros(g20);
+		
+		Selecao selecao5 = new Selecao(g21);
+		selecao5.setNome("Italia");
+		selecao5.addGoleiros(g22);
+		selecao5.addGoleiros(g23);
+		selecao5.addGoleiros(g24);
+		selecao5.addGoleiros(g25);
+		
 	}
 
 }
