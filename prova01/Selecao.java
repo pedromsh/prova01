@@ -7,10 +7,12 @@ public class Selecao {
 	private String nome;
 	private ArrayList<Goleiro> listaGoleiro;
 	
-	public Selecao(Goleiro goleiro) {
+	public Selecao(String nome) {
 		listaGoleiro = new ArrayList<Goleiro>();
+		this.nome = nome;
 	}
 	
+	//adiciona um goleiro a lista
 	public void addGoleiros(Goleiro goleiro) {
 		listaGoleiro.add(goleiro);
 	}
@@ -18,9 +20,7 @@ public class Selecao {
 	public String getNome() {
 		return nome;
 	}
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
+	
 	
 	public ArrayList<Goleiro> getListaGoleiro() {
 		return listaGoleiro;

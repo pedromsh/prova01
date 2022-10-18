@@ -1,11 +1,14 @@
 package prova01;
 
+//import java.util.ArrayList;
+
 public class Gol {
 
 	private int posicaoX;
 	private int posicaoY;
 	private int quadrante;
 	private String divisao;
+//	private ArrayList<Selecao> listaSelecao;
 	
 	public void setPosicaoX(int posicaoX) {
 		this.posicaoX = posicaoX;
@@ -27,7 +30,7 @@ public class Gol {
 		return quadrante;
 	}
 	
-	public void setQuadrante(int posicaoX, int posicaoY) {
+	public void setQuadrante() {
 		if(posicaoX <= 4 && posicaoY <= 7)
 			quadrante = 1;
 		if(posicaoX > 4 && posicaoY <= 7)
@@ -38,15 +41,19 @@ public class Gol {
 			quadrante = 4;
 	}
 	
-	public void setDivisao(int posicaoX, int posicaoY) {
+	public void setDivisao() {
 		if (posicaoX == 0 || posicaoY == 0 || posicaoY == 16)
-			divisao = "fora";
-		else if ((posicaoX == 1 && posicaoY > 0 && posicaoY < 16) || (posicaoY == 1 || posicaoY == 15 && posicaoX > 0))
-			divisao = "trave";
+			divisao = "f";
+		else if (posicaoY == 1 && posicaoX > 1)
+			divisao = "te";
+		else if (posicaoY == 15 && posicaoX > 1)
+			divisao = "td";
+		else if (posicaoX == 1 && posicaoX > 0 && posicaoX < 16)
+			divisao = "tr";
 		else if (posicaoX == 2 && posicaoY == 2)
-			divisao = "ângulo esquerdo";
+			divisao = "ae";
 		else if (posicaoX == 2 && posicaoY == 14)
-			divisao = "ângulo direito";
+			divisao = "ad";
 		else
 			divisao = "gol";
 	}

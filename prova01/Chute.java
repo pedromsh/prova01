@@ -7,6 +7,7 @@ public class Chute {
 	private int quadrante;
 	private int posicaoX;
 	private int posicaoY;
+	private String divisao;
 	
 	public Chute(int id, int forca, int quadrante, int posicaoX, int posicaoY) {
 		this.id = id;
@@ -14,6 +15,28 @@ public class Chute {
 		this.quadrante = quadrante;
 		this.posicaoX = posicaoX;
 		this.posicaoY = posicaoY;
+		this.divisao = null;
+	}
+	
+	public void setDivisao(int posicaoX, int posicaoY) {
+		if (posicaoX == 0 || posicaoY == 0 || posicaoY == 16)
+			divisao = "f";
+		else if (posicaoY == 1 && posicaoX > 1)
+			divisao = "te";
+		else if (posicaoY == 15 && posicaoX > 1)
+			divisao = "td";
+		else if (posicaoX == 1 && posicaoX > 0 && posicaoX < 16)
+			divisao = "tr";
+		else if (posicaoX == 2 && posicaoY == 2)
+			divisao = "ae";
+		else if (posicaoX == 2 && posicaoY == 14)
+			divisao = "ad";
+		else
+			divisao = "gol";
+	}
+	
+	public String getDivisao() {
+		return divisao;
 	}
 	public int getId() {
 		return id;
