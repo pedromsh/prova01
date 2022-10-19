@@ -17,6 +17,7 @@ public class Selecao {
 		listaGoleiro.add(goleiro);
 	}
 	
+	//retorna o nome da selecao
 	public String getNome() {
 		return nome;
 	}

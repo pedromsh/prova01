@@ -18,7 +18,17 @@ public class Chute {
 		this.divisao = null;
 	}
 	
-	public void setDivisao(int posicaoX, int posicaoY) {
+	public Chute(Chute chute) {
+		this.id = chute.getId();
+		this.forca = chute.getForca();
+		this.quadrante = chute.getQuadrante();
+		this.posicaoX = chute.getPosicaoX();
+		this.posicaoY = chute.getPosicaoY();
+		this.divisao = null;
+	}
+	
+	//definindo aonde o chute acerta
+	public void mapearGol(int posicaoX, int posicaoY) {
 		if (posicaoX == 0 || posicaoY == 0 || posicaoY == 16)
 			divisao = "f";
 		else if (posicaoY == 1 && posicaoX > 1)
@@ -35,25 +45,37 @@ public class Chute {
 			divisao = "gol";
 	}
 	
+	//recebe o o que sera divisao
+	public void setDivisao(String divisao) {
+		this.divisao = divisao;
+	}
+	
+	//retorna aonde o chute acerta
 	public String getDivisao() {
 		return divisao;
 	}
+	
+	//retorna o id do chute
 	public int getId() {
 		return id;
 	}
 	
+	//retorna a forca do chute
 	public int getForca() {
 		return forca;
 	}
 	
+	//retorna o quadrante do chute
 	public int getQuadrante() {
 		return quadrante;
 	}
 	
+	//retorna a posicao x onde vai o chute
 	public int getPosicaoX() {
 		return posicaoX;
 	}
 	
+	//retorna a posicao y onde vai o chute
 	public int getPosicaoY() {
 		return posicaoY;
 	}

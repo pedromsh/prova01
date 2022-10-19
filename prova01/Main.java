@@ -121,6 +121,12 @@ public class Main {
 
 	public static void main(String[] args) {
 		
+		Tentativas tentativa = carregarGol();
+		tentativa.chutar();
+		
+		System.out.println("Média de defesas: " + tentativa.calcularMediaDeDefesas());
+		System.out.println(tentativa.calcularPontuacaoGoleiro());
+		System.out.println("\nMédia de gols tomados: " + tentativa.calcularMediaGolsSofridos());
 	}
 
 }

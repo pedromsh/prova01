@@ -13,7 +13,6 @@ public class Goleiro {
 	private int forca;
 	private int equilibrio;
 	private int aag;
-	
 	private int forcaInsuficiente = 0;
 	private ArrayList<Chute> listaChute;
 	
@@ -30,16 +29,37 @@ public class Goleiro {
 		listaChute = new ArrayList<Chute>();
 	}
 	
-	//adiciona um chute ao arraylist de chutes
-	public void addListaChute(ArrayList<Chute> listaChute) {
-		for (Chute chute : listaChute) {
-			this.listaChute.add(chute);
+	//contabilizar o numero de defesas
+	public int contarDefesas() {
+		int defesas = 0;
+		for (Chute chutes : listaChute) {
+			if(chutes.getDivisao().equals("defesa")) {
+				defesas++;
+			}
 		}
+		
+		return defesas;
+	}
+	
+	public int contarGols() {
+		int gols = 0;
+		
+		for (Chute chutes : listaChute) {
+			if(chutes.getDivisao().equalsIgnoreCase("gol")) {
+				gols++;
+			}
+		}
+		
+		return gols;
+	}
+	
+	//adiciona um chute ao arraylist de chutes
+	public void addListaChute(Chute chute) {
+		this.listaChute.add(chute);
 	}
 	
 	//retorna o arraylist de chutes
-	public ArrayList<Chute> getListaChute()
-	{
+	public ArrayList<Chute> getListaChute() {
 		return this.listaChute;
 	}
 	

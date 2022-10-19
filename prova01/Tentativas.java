@@ -15,25 +15,37 @@ public class Tentativas {
 				for (Chute chute : listaChute) {
 					Gol aux = sortearDefesa(chute);
 					verificarGol(aux, chute, goleiro);
-					
 				}
 			}
 		}
 	}
 	
+	//sorter a celula inicial da defesa do goleiro
 	public Gol sortearDefesa(Chute chute) {
 		Random gerador = new Random();
 		Gol aux = new Gol();
 		
-		do {
-			aux.setPosicaoX(gerador.nextInt(8));
-			aux.setPosicaoY(gerador.nextInt(16));
-			aux.getQuadrante();
-		}while(aux.getQuadrante() != chute.getQuadrante());
+		if(chute.getQuadrante() == 1) {
+			aux.setPosicaoX(gerador.nextInt(5));
+			aux.setPosicaoY(gerador.nextInt(9));
+		}
+		else if(chute.getQuadrante() == 2) {
+			aux.setPosicaoX(gerador.nextInt(5));
+			aux.setPosicaoY(gerador.nextInt(8, 17));
+		}
+		else if(chute.getQuadrante() == 3) {
+			aux.setPosicaoX(gerador.nextInt(4, 9));
+			aux.setPosicaoY(gerador.nextInt(9));
+		}
+		else {
+			aux.setPosicaoX(gerador.nextInt(4, 9));
+			aux.setPosicaoY(gerador.nextInt(8, 17));
+		}
 		
 		return aux;
 	}
 	
+	//verificar se ocorreu gol ou defesa
 	public void verificarGol(Gol gol, Chute chute, Goleiro goleiro) {
 		int x = gol.getPosicaoX();
 		int y = gol.getPosicaoY();
@@ -43,6 +55,8 @@ public class Tentativas {
 		boolean defesa = false;
 		
 		somar = w % 4 == 0 ? (w/4) - 1 : (w/4);
+		
+		Chute chuteaux = new Chute(chute);
 		
 		do {
 			if(cont < 4) {
@@ -84,6 +98,69 @@ public class Tentativas {
 		
 		}while(w > 0 && defesa == false);
 		
+		if(defesa == false) {
+			chuteaux.setDivisao("gol");
+			goleiro.addListaChute(chuteaux);
+		}
+		else {
+			chuteaux.setDivisao("defesa");
+			goleiro.addListaChute(chuteaux);
+		}
+	}
+	
+	//questao 1
+	public double calcularMediaDeDefesas() {
+		double media = 0;
+		int soma = 0;
+		
+		for (Selecao selecoes : listaSelecoes) {
+			for (Goleiro goleiro : selecoes.getListaGoleiro()) {
+				soma = soma + goleiro.contarDefesas();
+			}
+		}
+		media = soma / 25;
+		
+		return media;
+	}
+	
+	//questao 2
+	public String calcularPontuacaoGoleiro() {
+		int defesas = 0;
+		String maiorPontuador = "";
+		String resultado = "";
+		
+		for (Selecao selecoes : listaSelecoes) {
+			for (Goleiro goleiro : selecoes.getListaGoleiro()) {
+				resultado = resultado + "\n" + goleiro.getNome() + " número de defesas: " + goleiro.contarDefesas();
+			}
+		}
+		
+		for (Selecao selecoes : listaSelecoes) {
+			for (Goleiro goleiro : selecoes.getListaGoleiro()) {
+				if(defesas < goleiro.contarDefesas()) {
+					defesas = goleiro.contarDefesas();
+					maiorPontuador = goleiro.getNome();
+				}
+			}
+			defesas = 0;
+			resultado = resultado + "\nGoleiro titular da " + selecoes.getNome() + ": " + maiorPontuador;
+		}
+		
+		return resultado;
+	}
+	
+	public double calcularMediaGolsSofridos() {
+		double media = 0;
+		int soma = 0;
+		
+		for (Selecao selecoes : listaSelecoes) {
+			for (Goleiro goleiro : selecoes.getListaGoleiro()) {
+				soma = soma + goleiro.contarGols();
+			}
+		}
+		media = soma / 25;
+		
+		return media;
 	}
 	
 	//adiciona selecoes a lista
@@ -101,14 +178,17 @@ public class Tentativas {
 		this.listaGol.add(gol);
 	}
 	
+	//retorna o arraylist de selecoes
 	public ArrayList<Selecao> getListaSelecoes(){
 		return listaSelecoes;
 	}
 	
+	//retorna o arraylist de chutes
 	public ArrayList<Chute> getListaChute() {
 		return listaChute;
 	}
 	
+	//retorna o arraylist de celulas do gol
 	public ArrayList<Gol> getListaGol() {
 		return listaGol;
 	}
