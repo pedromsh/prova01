@@ -1,6 +1,7 @@
 package prova01;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Main {
 	
@@ -120,13 +121,38 @@ public class Main {
 	}
 
 	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
 		
 		Tentativas tentativa = carregarGol();
 		tentativa.chutar();
 		
-		System.out.println("Média de defesas: " + tentativa.calcularMediaDeDefesas());
-		System.out.println(tentativa.calcularPontuacaoGoleiro());
-		System.out.println("\nMédia de gols tomados: " + tentativa.calcularMediaGolsSofridos());
+//		System.out.println("Média de defesas: " + tentativa.calcularMediaDeDefesas());
+//		System.out.println(tentativa.calcularPontuacaoGoleiro());
+//		System.out.println("\nMédia de gols tomados: " + tentativa.calcularMediaGolsSofridos());
+//		System.out.println(tentativa.alvoChutes());
+//		System.out.println(tentativa.golsAngulo());
+		System.out.println();
+//		System.out.println("Gols tomados por força ser insuficiente: " + tentativa.golsForcaMenor());
+//		System.out.println(tentativa.imprimirFicha());
+		
+		input.close();
 	}
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

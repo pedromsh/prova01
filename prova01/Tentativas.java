@@ -149,6 +149,7 @@ public class Tentativas {
 		return resultado;
 	}
 	
+	//questao 3
 	public double calcularMediaGolsSofridos() {
 		double media = 0;
 		int soma = 0;
@@ -161,6 +162,88 @@ public class Tentativas {
 		media = soma / 25;
 		
 		return media;
+	}
+	
+	//questao 4
+	public String alvoChutes() {
+		int fora = 0;
+		int te = 0;
+		int td = 0;
+		int tr = 0;
+		String resultado = "";
+		
+		for (Chute chutes : listaChute) {
+			if(chutes.mapearGol().equals("f")) {
+				fora++;
+			}
+			else if(chutes.mapearGol().equals("te")) {
+				te++;
+			}
+			else if(chutes.mapearGol().equals("td")) {
+				td++;
+			}
+			else if(chutes.mapearGol().equals("tr")) {
+				tr++;
+			}
+		}
+		
+		resultado = resultado + "\nChutes para fora: " + fora + "\nChutes na trave esquerda: " + te + "\nChutes na trave direita: " + td + "\nChutes no travessão: " + tr;
+		
+		return resultado;
+	}
+	
+	//questao 5 
+	public String golsAngulo() {
+		String resultado = "";
+		int id = 0;
+		for (Chute chutes : listaChute) {
+			if(chutes.mapearGol().equals("a")) {
+				id = chutes.getId();
+				resultado = resultado + "\nChutes no ângulo:\n" + id;
+			}
+		}
+		
+		return resultado;
+	}
+	
+	//questao 6
+	public void melhoresGoleiros() {
+		int defesa = 0;
+		
+		for (Selecao selecoes : listaSelecoes) {
+			for(Goleiro goleiros : selecoes.getListaGoleiro()) {
+				
+			}
+		}
+	}
+	
+	//questao 7
+	public int golsForcaMenor() {
+		int gols = 0;
+		
+		for (Selecao selecoes : listaSelecoes) {
+			for(Goleiro goleiros : selecoes.getListaGoleiro()) {
+				gols = gols + goleiros.getForcaInauficiente();
+			}
+		}
+		
+		return gols;
+		
+	}
+	
+	//questao 8
+	public String imprimirFicha() {
+		String resultado = "";
+		
+		for (Selecao selecoes : listaSelecoes) {
+			for(Goleiro goleiros : selecoes.getListaGoleiro()) {
+				resultado = resultado + "\nNome: " + goleiros.getNome() + "\nSeleçao: " + selecoes.getNome();
+				resultado = resultado + "\nGols defendidos: " + goleiros.contarDefesas() + "\nGols tomados: " + goleiros.contarGols();
+				resultado = resultado + "\nAAG: " + goleiros.getAag() + "\n";
+			}
+		}
+		
+		return resultado;
 	}
 	
 	//adiciona selecoes a lista

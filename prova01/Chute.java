@@ -28,7 +28,7 @@ public class Chute {
 	}
 	
 	//definindo aonde o chute acerta
-	public void mapearGol(int posicaoX, int posicaoY) {
+	public String mapearGol() {
 		if (posicaoX == 0 || posicaoY == 0 || posicaoY == 16)
 			divisao = "f";
 		else if (posicaoY == 1 && posicaoX > 1)
@@ -38,11 +38,13 @@ public class Chute {
 		else if (posicaoX == 1 && posicaoX > 0 && posicaoX < 16)
 			divisao = "tr";
 		else if (posicaoX == 2 && posicaoY == 2)
-			divisao = "ae";
+			divisao = "a";
 		else if (posicaoX == 2 && posicaoY == 14)
-			divisao = "ad";
+			divisao = "a";
 		else
 			divisao = "gol";
+		
+		return divisao;
 	}
 	
 	//recebe o o que sera divisao

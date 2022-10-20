@@ -41,6 +41,7 @@ public class Goleiro {
 		return defesas;
 	}
 	
+	//contabiliza o numero de gols tomados
 	public int contarGols() {
 		int gols = 0;
 		
