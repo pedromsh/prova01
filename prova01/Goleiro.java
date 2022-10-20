@@ -54,6 +54,47 @@ public class Goleiro {
 		return gols;
 	}
 	
+	//verifica o quadrante que tomou mais gols
+	public String golsPorQuadrante() {
+		int q1 = 0, q2 = 0, q3 = 0, q4 = 0;
+		int maior = 0;
+		String resposta = "";
+		
+		for (Chute chutes : listaChute) {
+			if(chutes.getDivisao().equals("gol")) {
+				if(chutes.getQuadrante() == 1)
+					q1++;
+				else if(chutes.getQuadrante() == 2)
+					q2++;
+				else if(chutes.getQuadrante() == 3)
+					q3++;
+				else
+					q4++;
+			}
+		}
+		
+		if(q1 > q2 && q1 > q3 && q1 > q4)
+			maior = q1;
+		else if(q2 > q1 && q2 > q3 && q2 > q4)
+			maior = q2;
+		else if(q3 > q1 && q3 > q2 && q3 > q4)
+			maior = q3;
+		else if(q4 > q1 && q4 > q2 && q4 > q3)
+			maior = q4;
+		
+		
+		if(maior == q1)
+			resposta = "quadrante 1";
+		else if(maior == q2)
+			resposta = "quadrante 2";
+		else if(maior == q3)
+			resposta = "quadrante 3";
+		else if(maior == q4)
+			resposta = "quadrante 4";
+		
+		return resposta;
+	}
+	
 	//adiciona um chute ao arraylist de chutes
 	public void addListaChute(Chute chute) {
 		this.listaChute.add(chute);

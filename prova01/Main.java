@@ -126,14 +126,17 @@ public class Main {
 		Tentativas tentativa = carregarGol();
 		tentativa.chutar();
 		
-//		System.out.println("Média de defesas: " + tentativa.calcularMediaDeDefesas());
-//		System.out.println(tentativa.calcularPontuacaoGoleiro());
-//		System.out.println("\nMédia de gols tomados: " + tentativa.calcularMediaGolsSofridos());
-//		System.out.println(tentativa.alvoChutes());
-//		System.out.println(tentativa.golsAngulo());
-		System.out.println();
-//		System.out.println("Gols tomados por força ser insuficiente: " + tentativa.golsForcaMenor());
-//		System.out.println(tentativa.imprimirFicha());
+		System.out.println("Média de defesas: " + tentativa.calcularMediaDeDefesas());
+		System.out.println(tentativa.calcularPontuacaoGoleiro());
+		System.out.println("\nMédia de gols tomados: " + tentativa.calcularMediaGolsSofridos());
+		System.out.println(tentativa.alvoChutes());
+		System.out.println(tentativa.golsAngulo());
+		System.out.println(tentativa.melhoresGoleiros());
+		System.out.println("Gols tomados por força ser insuficiente: " + tentativa.golsForcaMenor());
+		System.out.println(tentativa.imprimirFicha());
+		System.out.println("Digite o id do goleiro: ");
+		int id = input.nextInt();
+		System.out.println("Quadrante que mais tomou gol: " + tentativa.pegarId(id));
 		
 		input.close();
 	}

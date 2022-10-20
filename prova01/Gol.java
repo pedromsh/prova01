@@ -1,14 +1,11 @@
 package prova01;
 
-//import java.util.ArrayList;
-
 public class Gol {
 
 	private int posicaoX;
 	private int posicaoY;
 	private int quadrante;
 	private String divisao;
-//	private ArrayList<Selecao> listaSelecao;
 	
 	public void setPosicaoX(int posicaoX) {
 		this.posicaoX = posicaoX;

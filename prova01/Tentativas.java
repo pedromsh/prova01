@@ -207,15 +207,59 @@ public class Tentativas {
 	}
 	
 	//questao 6
-	public void melhoresGoleiros() {
-		int defesa = 0;
+	public String melhoresGoleiros() {
+		int defesas1 = 0;
+		int defesas2 = 0;
+		int defesas3 = 0;
+		String resultado = "";
+		String maiorPontuador = "";
+		String segundoMaior = "";
+		String terceiroMaior = "";
+		String selecao1 = "";
+		String selecao2 = "";
+		String selecao3 = "";
 		
 		for (Selecao selecoes : listaSelecoes) {
-			for(Goleiro goleiros : selecoes.getListaGoleiro()) {
-				
+			for(Goleiro goleiro : selecoes.getListaGoleiro()) {
+				if(defesas1 < goleiro.contarDefesas()) {
+					defesas1 = goleiro.contarDefesas();
+					maiorPontuador = goleiro.getNome();
+					selecao1 = selecoes.getNome();
+				}
+			}
+			
+		}
+		resultado = resultado + "\nMaior pontuador: " + maiorPontuador + " Seleção: " + selecao1;
+		
+		for (Selecao selecoes : listaSelecoes) {
+			for(Goleiro goleiro : selecoes.getListaGoleiro()) {
+				if(defesas2 < goleiro.contarDefesas() && goleiro.contarDefesas() < defesas1) {
+					defesas2 = goleiro.contarDefesas();
+					segundoMaior = goleiro.getNome();
+					selecao2 = selecoes.getNome();
+				}
 			}
 		}
+		
+		resultado = resultado + "\nSegundo maior pontuador: " + segundoMaior + " Seleção: " + selecao2;
+		
+		for (Selecao selecoes : listaSelecoes) {
+			for(Goleiro goleiro : selecoes.getListaGoleiro()) {
+				if(defesas3 < goleiro.contarDefesas() && goleiro.contarDefesas() < defesas2) {
+					defesas3 = goleiro.contarDefesas();
+					terceiroMaior = goleiro.getNome();
+					selecao3 = selecoes.getNome();
+				}
+			}
+		}
+		
+		resultado = resultado + "\nTerceiro maior pontuador: " + terceiroMaior + " Seleção: " + selecao3;
+		
+		return resultado;
+		
 	}
+	
+	
 	
 	//questao 7
 	public int golsForcaMenor() {
@@ -240,6 +284,21 @@ public class Tentativas {
 				resultado = resultado + "\nNome: " + goleiros.getNome() + "\nSeleçao: " + selecoes.getNome();
 				resultado = resultado + "\nGols defendidos: " + goleiros.contarDefesas() + "\nGols tomados: " + goleiros.contarGols();
 				resultado = resultado + "\nAAG: " + goleiros.getAag() + "\n";
+			}
+		}
+		
+		return resultado;
+	}
+	
+	//questao 9
+	public String pegarId(int id) {
+		String resultado = "";
+		
+		for (Selecao selecoes : listaSelecoes) {
+			for(Goleiro goleiros : selecoes.getListaGoleiro()) {
+				if(goleiros.getId() == id) {
+					resultado = goleiros.golsPorQuadrante();
+				}
 			}
 		}
 		
